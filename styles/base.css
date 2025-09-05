@@ -10,11 +10,17 @@ header {
     background-color: #003366;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 1px;
 }
+
+#course-title {
+  color: white;
+}
+
 header h1 {
     margin: 0;
     font-size: 1.8rem;
+    
 }
 header h1 span {
     color: #ffd700; /* yellow name */
@@ -24,9 +30,13 @@ header h1 span {
 nav {
     background-color: #333;
     display: flex;
-    justify-content: space-around; /* first link left, last link right */
+    justify-content: space-around; /* para bulag */
     padding: 10px 30px;
 }
+header nav {
+  margin-top: 20px; /* dugang ani */
+}
+
 nav a {
     color: white;
     text-decoration: none;
