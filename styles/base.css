@@ -73,6 +73,7 @@ section > div, aside > ul, section > p {
     justify-content: space-between;
     gap: 20px;
     align-items: flex-start;
+    text-align: justify;
 }
 #about img {
     width: 150px;
@@ -141,7 +142,4 @@ footer .last-mod {
     color: #ccc;
 }
 
-p1 {
-    text-align: justify;
-}
 
