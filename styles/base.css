@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+header h1 span {
+    color: #ffd700; /* yellow name */
+}
+
+/* Navigation */
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: space-around; /* first link left, last link right */
+    padding: 10px 30px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+/* Main Layout */
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card Style (About Me + Resources) */
+section, aside {
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+section h2, aside h2 {
+    background-color: #1e4b7a;
+    color: white;
+    margin: 0;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+}
+section > div, aside > ul, section > p {
+    padding: 15px;
+}
+
+/* About Me section */
+#about {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+}
+#about img {
+    width: 150px;
+    border-radius: 8px;
+}
+
+/* Location */
+h3 {
+    margin: 0;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    text-align: center;
+    text-decoration: underline;
+      
+}
+#location {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+}
+#location img {
+    width: 100px;
+    border: 1px solid #ccc;
+}
+#location p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-style: italic;
+    text-align: justify;
+}
+
+/* Web Dev Resources */
+aside ul {
+    list-style-type: none;
+    padding: 0 15px 15px 15px;
+    margin: 0;
+}
+aside li {
+    margin: 8px 0;
+}
+aside a {
+    color: #1e4b7a;
+    text-decoration: none;
+}
+aside a:hover {
+    text-decoration: underline;
+}
+
+    /* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+footer span {
+    color: #ffd700;
+    font-weight: bold;
+}
+footer .last-mod {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+p1 {
+    text-align: justify;
+}
+
