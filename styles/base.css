@@ -55,6 +55,12 @@ main {
     padding: 20px;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Added this */
+}
+
 /* Card Style (About Me + Resources) */
 section, aside {
     background: white;
