@@ -43,7 +43,7 @@ nav a {
     font-weight: bold;
 }
 nav a:hover {
-    color: #ffd700;
+    color: lightblue;
     text-decoration: underline;
 }
 
