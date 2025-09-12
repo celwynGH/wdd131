@@ -30,3 +30,19 @@
   max-width: var(--maxwidth);
   margin: 0 auto;
 }
+
+
+/* temples-large.css */
+nav ul {
+  flex-direction: row;
+  justify-content: center;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.album {
+  grid-template-columns: repeat(3, 1fr);
+}
