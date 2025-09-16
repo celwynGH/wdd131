@@ -24,7 +24,7 @@ main {
 
 h2 {
 	color: navy;
-	text-align: left;   /* Changed from center to left */
+	text-align: left;   
 	margin-left: 0;     
 }
 
@@ -53,7 +53,7 @@ footer {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal columns */
+  grid-template-columns: 1fr 1fr; 
   gap: 1rem;
 }
 
