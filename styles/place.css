@@ -64,7 +64,7 @@ footer {
 
 /* Weather icon pseudo-element for desktop view */
 .weather h2::after {
-  content: none; /* deleted the icon here "⛅" */
+  content: "⛅"; /* the icon here "⛅" */
 }
 
 .weather-icon {
