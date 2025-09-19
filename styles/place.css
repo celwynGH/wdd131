@@ -1,6 +1,6 @@
 :root {
-  --primary: #d62828;
-  --secondary: #007f5f;
+  --primary: blue;
+  --secondary: red;
   --light: #f8f9fa;
   --dark: #333;
 }
@@ -14,7 +14,7 @@ body {
 
 header {
   background: var(--primary);
-  color: white;
+  color: yellow;
   text-align: center;
   padding: 1rem;
 }
