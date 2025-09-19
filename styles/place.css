@@ -64,7 +64,7 @@ footer {
 
 /* Weather icon pseudo-element for desktop view */
 .weather h2::after {
-  content: " ⛅"; /* emoticon only for large screens */
+  content: none; /* deleted the icon here "⛅" */
 }
 
 .weather-icon {
