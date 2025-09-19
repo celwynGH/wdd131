@@ -64,7 +64,7 @@ footer {
 
 /* Weather icon pseudo-element for desktop view */
 .weather h2::after {
-  content: "⛅"; /* the icon here "⛅" */
+  content: none; /* removed the icon here "⛅" */
 }
 
 .weather-icon {
@@ -73,14 +73,23 @@ footer {
   margin: 0.5rem 0;
 }
 
-/* Responsive layout */
+/* Responsive layout---Show the icon only on larger screens (desktop/tablet) */
 @media (min-width: 768px) {
+  .weather h2::after {
+    content: "⛅";
+  }
+
+
   /* Overlay boxes on hero image */
   .data, .weather {
     position: absolute;
     background: rgba(255, 255, 255, 0.9); /* slight transparency */
     max-width: 300px;
-  }
+  } 
+
+
+
+  
 
   .data {
     top: 10%;
