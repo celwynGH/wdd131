@@ -27,81 +27,84 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---------- Temple Data ----------
   const temples = [
-  {
-    templeName: "Davao Philippines",
-    location: "Davao Philippines",
-    dedicated: "2020, November, 14",
-    area: 18450,
-    imageUrl:
-    "https://churchofjesuschristtemples.org/assets/img/temples/davao-philippines-temple/davao-philippines-temple-11690.jpg"
-  },
-  {
-    templeName: "Cagayan de Oro Philippines",
-    location: "Cagayan de Oro Philippines",
-    dedicated: "2024, August, 31",
-    area: 18449,
-    imageUrl:
-    "https://churchofjesuschristtemples.org/assets/img/temples/cagayan-de-oro-philippines-temple/cagayan-de-oro-philippines-temple-50369.jpg"
-  },
-  {
-    templeName: "Alabang Philippines",
-    location: "Alabang Philippines",
-    dedicated: "2026, January, 18",
-    area: 0,
-    imageUrl:
-    "https://churchofjesuschristtemples.org/assets/img/temples/alabang-philippines-temple/alabang-philippines-temple-8191.jpg"
-  },
-  {
-    templeName: "San Jose Del Monte Philippines",
-    location: "San Jose Del Monte Philippines",
-    dedicated: "No date yet",
-    area: 0,
-    imageUrl:
-    "No image URL yet"
-  },
-  {
-    templeName: "Manila Philippines",
-    location: "Manila Philippines",
-    dedicated: "1984, September, 25-27",
-    area: 26683,
-    imageUrl:
-    "https://churchofjesuschristtemples.org/assets/img/temples/_temp/029-Manila-Philippines-Temple.jpg"
-  },
-  {
-    templeName: "Urdaneta Philippines",
-    location: "Urdaneta Philippines",
-    dedicated: "2024, April, 28",
-    area: 32604,
-    imageUrl:
-    "https://churchofjesuschristtemples.org/assets/img/temples/urdaneta-philippines-temple/urdaneta-philippines-temple-45874-main.jpg"
-  },
-  {
-    templeName: "Tuguegarao City Philippines",
-    location: "Tuguegarao City Philippines",
-    dedicated: "No date yet",
-    area: 18850,
-    imageUrl:
-    "https://churchofjesuschristtemples.org/assets/img/temples/tuguegarao-city-philippines-temple/tuguegarao-city-philippines-temple-57610-main.jpg"
-  },
-  {
-    templeName: "Tacloban City Philippines",
-    location: "Tacloban City Philippines",
-    dedicated: "No date yet",
-    area: 21407,
-    imageUrl:
-    "https://churchofjesuschristtemples.org/assets/img/temples/tacloban-city-philippines-temple/tacloban-city-philippines-temple-55808-main.jpg"
-  },
-  {
-    templeName: "Cebu City Philippines",
-    location: "Cebu City Philippines",
-    dedicated: "2010, June, 13",
-    area: 29556,
-    imageUrl:
-    "https://churchofjesuschristtemples.org/assets/img/temples/_temp/133-Cebu-City-Philippines-Temple.jpg"
-  },
-
-    // …add more temples
+    {
+      templeName: "Davao Philippines",
+      location: "Davao Philippines",
+      dedicated: "2020, November, 14",
+      area: 18450,
+      imageUrl:
+        "https://churchofjesuschristtemples.org/assets/img/temples/davao-philippines-temple/davao-philippines-temple-11690.jpg"
+    },
+    {
+      templeName: "Cagayan de Oro Philippines",
+      location: "Cagayan de Oro Philippines",
+      dedicated: "2024, August, 31",
+      area: 18449,
+      imageUrl:
+        "https://churchofjesuschristtemples.org/assets/img/temples/cagayan-de-oro-philippines-temple/cagayan-de-oro-philippines-temple-50369.jpg"
+    },
+    {
+      templeName: "Alabang Philippines",
+      location: "Alabang Philippines",
+      dedicated: "2026, January, 18",
+      area: 0,
+      imageUrl:
+        "https://churchofjesuschristtemples.org/assets/img/temples/alabang-philippines-temple/alabang-philippines-temple-8191.jpg"
+    },
+    {
+      templeName: "San Jose Del Monte Philippines",
+      location: "San Jose Del Monte Philippines",
+      dedicated: "No date yet",
+      area: 0,
+      imageUrl: "No image URL yet"
+    },
+    {
+      templeName: "Manila Philippines",
+      location: "Manila Philippines",
+      dedicated: "1984, September, 25-27",
+      area: 26683,
+      imageUrl:
+        "https://churchofjesuschristtemples.org/assets/img/temples/_temp/029-Manila-Philippines-Temple.jpg"
+    },
+    {
+      templeName: "Urdaneta Philippines",
+      location: "Urdaneta Philippines",
+      dedicated: "2024, April, 28",
+      area: 32604,
+      imageUrl:
+        "https://churchofjesuschristtemples.org/assets/img/temples/urdaneta-philippines-temple/urdaneta-philippines-temple-45874-main.jpg"
+    },
+    {
+      templeName: "Tuguegarao City Philippines",
+      location: "Tuguegarao City Philippines",
+      dedicated: "No date yet",
+      area: 18850,
+      imageUrl:
+        "https://churchofjesuschristtemples.org/assets/img/temples/tuguegarao-city-philippines-temple/tuguegarao-city-philippines-temple-57610-main.jpg"
+    },
+    {
+      templeName: "Tacloban City Philippines",
+      location: "Tacloban City Philippines",
+      dedicated: "No date yet",
+      area: 21407,
+      imageUrl:
+        "https://churchofjesuschristtemples.org/assets/img/temples/tacloban-city-philippines-temple/tacloban-city-philippines-temple-55808-main.jpg"
+    },
+    {
+      templeName: "Cebu City Philippines",
+      location: "Cebu City Philippines",
+      dedicated: "2010, June, 13",
+      area: 29556,
+      imageUrl:
+        "https://churchofjesuschristtemples.org/assets/img/temples/_temp/133-Cebu-City-Philippines-Temple.jpg"
+    }
   ];
+
+  // ---------- Helper: Extract Year ----------
+  function getDedicatedYear(dedicated) {
+    const yearMatch = dedicated.match(/\d{4}/);
+    return yearMatch ? parseInt(yearMatch[0]) : null;
+  }
 
   // ---------- Function to Display ----------
   function displayTemples(filteredTemples) {
@@ -126,14 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
     switch (criteria) {
       case "old":
         filtered = temples.filter(t => {
-          const year = parseInt(t.dedicated);
-          return !isNaN(year) && year < 1900;
+          const year = getDedicatedYear(t.dedicated);
+          return year && year < 1900;
         });
         break;
       case "new":
         filtered = temples.filter(t => {
-          const year = parseInt(t.dedicated);
-          return !isNaN(year) && year > 2000;
+          const year = getDedicatedYear(t.dedicated);
+          return year && year > 2000;
         });
         break;
       case "large":
