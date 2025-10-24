@@ -7,3 +7,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+// Mobile hamburger toggle
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector("nav ul");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});

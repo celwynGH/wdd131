@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.6;
   color: #333;
 }
@@ -13,41 +13,60 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
+  position: relative;
 }
 
 header .logo {
-  height: 150px;
+  height: 120px;
 }
 
+/* Default Navigation */
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background: #40b174;
+  color: #000;
+}
+
+/* Hamburger button - hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 35px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 /* Hero Section */
 .hero {
-  background: url("../images/hero.jpg") 
-              center/cover no-repeat;
+  background: url("../images/hero.jpg") center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 120px 20px;
   position: relative;
 }
 
-/* Optional dark overlay to improve text visibility */
 .hero::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* adjust darkness */
-  z-index: 0;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .hero h1,
@@ -72,37 +91,6 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
-/* Sections */
-section {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-#menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-#menu li {
-  background: #f8f8f8;
-  margin: 10px auto;
-  padding: 10px;
-  width: 60%;
-  border-radius: 5px;
-}
-
-/* Gallery */
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.gallery-container img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
 
 /* Footer */
 footer {
@@ -113,64 +101,53 @@ footer {
   margin-top: 20px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 15px;           /* added padding for better hover effect */
-  border-radius: 5px;          /* rounded corners */
-  transition: 0.3s ease;
-}
-
-nav a:hover {
-  background: #40b174;         /* gold background on hover */
-  color: #000;                 /* text turns black */
-}
-
-/* ✅ Mobile Responsive Design */
+/* ✅ Mobile Responsive + Hamburger Menu */
 @media (max-width: 768px) {
 
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
+  .hamburger {
+    display: block;
   }
 
-  header .logo {
-    height: 100px; /* smaller logo on mobile */
-    margin-bottom: 10px;
-  }
-
-  nav {
-    display: flex;
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #b30000;
     flex-direction: column;
     gap: 10px;
+    padding: 15px 0;
+    text-align: center;
+    display: none;
   }
 
-  nav a {
-    padding: 10px;
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li {
     width: 100%;
   }
 
+  nav a {
+    width: 100%;
+    display: block;
+  }
+
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  header .logo {
+    height: 100px;
+  }
+
   .hero {
-    padding: 80px 15px; /* smaller spacing */
+    padding: 80px 15px;
   }
 
   .hero h1 {
     font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  /* Menu items responsiveness */
-  #menu li {
-    width: 100%; /* full width on phone */
-  }
-
-  /* Gallery responsiveness */
-  .gallery-container {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
