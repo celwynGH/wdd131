@@ -126,3 +126,51 @@ nav a:hover {
   background: #40b174;         /* gold background on hover */
   color: #000;                 /* text turns black */
 }
+
+/* ✅ Mobile Responsive Design */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  header .logo {
+    height: 100px; /* smaller logo on mobile */
+    margin-bottom: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 80px 15px; /* smaller spacing */
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Menu items responsiveness */
+  #menu li {
+    width: 100%; /* full width on phone */
+  }
+
+  /* Gallery responsiveness */
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
