@@ -4,7 +4,7 @@ body {
   width: 210mm;             /* A4 width */
   min-height: 297mm;        /* A4 height */
   margin: 0 auto;
-  padding: 20mm 25mm;       /* A4 page margins */
+  padding: 15mm 20mm;       /* A4 page margins */
   background: white;
   color: #000;
   line-height: 1.6;
@@ -117,6 +117,7 @@ a:hover {
 @page {
   size: A4;
   margin: 20mm 25mm;
+  
 }
 
 @media print {
